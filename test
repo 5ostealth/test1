@@ -193,7 +193,6 @@ function Abbreviate(value)
 	local IsLocking = false
 	local Crashing = false
 	local CustomDrop = false
-	
 	if Player then
 
 
