@@ -82,89 +82,119 @@ function Abbreviate(value)
 		end
 		return str
 	end
-end
------- IGNORE EVERYTHING
-repeat wait() until game.Players.LocalPlayer.Character
+	repeat wait() until game.Players.LocalPlayer.Character
 
-game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):SetStateEnabled(Enum.HumanoidStateType.FallingDown, false)
-if getgenv().AutoRender == true then
-    UserSettings().GameSettings.MasterVolume = 0
-
-    
-local main = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local TextLabel_2 = Instance.new("TextLabel")
-local TextLabel_3 = Instance.new("TextLabel")
-local MiddleLabel = Instance.new("TextLabel")
-local CreditsLabel = Instance.new("TextLabel")
-
-main.Name = "RenderScreen"
-main.Parent = game.CoreGui
-main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-main.IgnoreGuiInset = true
-
-Frame.Parent = main
-Frame.Active = true
-Frame.AnchorPoint = Vector2.new(0.5, 0.5)
-Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
-Frame.Size = UDim2.new(1, 0, 1, 0)
-
-TextLabel.Parent = Frame
-TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.5, 0, 0.42, 0)
-TextLabel.Size = UDim2.new(0, 279, 0, 34)
-TextLabel.Font = Enum.Font.Gotham
-TextLabel.Text = "#FUCKIKU, Welcome " .. game.Players.LocalPlayer.Name .. " yes that is your username if you want to see it monkey"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
-
-MiddleLabel.Parent = Frame
-MiddleLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-MiddleLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-MiddleLabel.BackgroundTransparency = 1.000
-MiddleLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
-MiddleLabel.Size = UDim2.new(0, 279, 0, 34)
-MiddleLabel.Font = Enum.Font.Gotham
-MiddleLabel.Text = "ghoulic control v1.0"
-MiddleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-MiddleLabel.TextScaled = true
-MiddleLabel.TextSize = 14.000
-MiddleLabel.TextWrapped = true
-
-CreditsLabel.Parent = Frame
-CreditsLabel.AnchorPoint = Vector2.new(1, 0)
-CreditsLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-CreditsLabel.BackgroundTransparency = 1.000
-CreditsLabel.Position = UDim2.new(1, -10, 0, 10)
-CreditsLabel.Size = UDim2.new(0, 200, 0, 34)
-CreditsLabel.Font = Enum.Font.Gotham
-CreditsLabel.Text = "credits: Limitedtear"
-CreditsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-CreditsLabel.TextScaled = true
-CreditsLabel.TextSize = 14.000
-CreditsLabel.TextWrapped = true
-
-game:GetService("RunService"):Set3dRenderingEnabled(false)
-end
-repeat wait(1) until game.Players:FindFirstChild(getgenv().MainAccount)
-local MainAccount = getgenv().MainAccount
-local Player = game.Players:FindFirstChild(MainAccount)
-
-local AutoGrind = false
-local Dropping = false
-local AddOn = false
-local Aura = false
-local CurrAnim = nil
-local IsLocking = false
-local Crashing = false
-local CustomDrop = false
-if Player then
+	game.Players.LocalPlayer.Character:WaitForChild("Humanoid"):SetStateEnabled(Enum.HumanoidStateType.FallingDown, false)
+	if getgenv().AutoRender == true then
+		UserSettings().GameSettings.MasterVolume = 0
+	end
+	
+	local main = Instance.new("ScreenGui")
+	local Frame = Instance.new("Frame")
+	local TextLabel = Instance.new("TextLabel")
+	local MiddleLabel = Instance.new("TextLabel")
+	local CreditsLabel = Instance.new("TextLabel")
+	local WalletLabel = Instance.new("TextLabel")
+	local MoneyLabel = Instance.new("TextLabel")
+	
+	main.Name = "RenderScreen"
+	main.Parent = game.CoreGui
+	main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	main.IgnoreGuiInset = true
+	
+	Frame.Parent = main
+	Frame.Active = true
+	Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+	Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
+	Frame.Size = UDim2.new(1, 0, 1, 0)
+	
+	TextLabel.Parent = Frame
+	TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+	TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	TextLabel.BackgroundTransparency = 1.000
+	TextLabel.Position = UDim2.new(0.5, 0, 0.42, 0)
+	TextLabel.Size = UDim2.new(0, 300, 0, 40)
+	TextLabel.Font = Enum.Font.Gotham
+	TextLabel.Text = "Welcome " .. game.Players.LocalPlayer.Name .. " yes that is your username if you want to see it monkey"
+	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextLabel.TextScaled = true
+	TextLabel.TextSize = 18.000
+	TextLabel.TextWrapped = true
+	
+	MiddleLabel.Parent = Frame
+	MiddleLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+	MiddleLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	MiddleLabel.BackgroundTransparency = 1.000
+	MiddleLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
+	MiddleLabel.Size = UDim2.new(0, 300, 0, 40)
+	MiddleLabel.Font = Enum.Font.Gotham
+	MiddleLabel.Text = "ghoulic control v1.0"
+	MiddleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+	MiddleLabel.TextScaled = true
+	MiddleLabel.TextSize = 22.000
+	MiddleLabel.TextWrapped = true
+	
+	CreditsLabel.Parent = Frame
+	CreditsLabel.AnchorPoint = Vector2.new(0, 1)
+	CreditsLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	CreditsLabel.BackgroundTransparency = 1.000
+	CreditsLabel.Position = UDim2.new(0, 10, 1, -10)
+	CreditsLabel.Size = UDim2.new(0, 150, 0, 20)
+	CreditsLabel.Font = Enum.Font.Gotham
+	CreditsLabel.Text = "credits: Limitedtear"
+	CreditsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+	CreditsLabel.TextScaled = true
+	CreditsLabel.TextSize = 12.000
+	CreditsLabel.TextWrapped = true
+	
+	WalletLabel.Parent = Frame
+	WalletLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+	WalletLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	WalletLabel.BackgroundTransparency = 1.000
+	WalletLabel.Position = UDim2.new(0.5, 0, 0.58, 0)
+	WalletLabel.Size = UDim2.new(0, 300, 0, 40)
+	WalletLabel.Font = Enum.Font.Gotham
+	WalletLabel.Text = "Wallet:"
+	WalletLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+	WalletLabel.TextScaled = true
+	WalletLabel.TextSize = 18.000
+	WalletLabel.TextWrapped = true
+	
+	MoneyLabel.Parent = Frame
+	MoneyLabel.AnchorPoint = Vector2.new(1, 1)
+	MoneyLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	MoneyLabel.BackgroundTransparency = 1.000
+	MoneyLabel.Position = UDim2.new(1, -10, 1, -10)
+	MoneyLabel.Size = UDim2.new(0, 150, 0, 20)
+	MoneyLabel.Font = Enum.Font.Gotham
+	MoneyLabel.Text = "0"
+	MoneyLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+	MoneyLabel.TextScaled = true
+	MoneyLabel.TextSize = 12.000
+	MoneyLabel.TextWrapped = true
+	
+	game:GetService("RunService"):Set3dRenderingEnabled(false)
+	
+	-- Update the money label with the player's money amount
+	game.Players.LocalPlayer:WaitForChild("leaderstats").Money.Changed:Connect(function(value)
+		MoneyLabel.Text = tostring(value)
+	end)
+	
+	repeat wait(1) until game.Players:FindFirstChild(getgenv().MainAccount)
+	local MainAccount = getgenv().MainAccount
+	local Player = game.Players:FindFirstChild(MainAccount)
+	
+	local AutoGrind = false
+	local Dropping = false
+	local AddOn = false
+	local Aura = false
+	local CurrAnim = nil
+	local IsLocking = false
+	local Crashing = false
+	local CustomDrop = false
+	
+	if Player then
 
 
 	getgenv().ExecutedAlt  = true
