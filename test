@@ -90,37 +90,53 @@ if getgenv().AutoRender == true then
 	UserSettings().GameSettings.MasterVolume = 0
 
     
-local main = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local TextLabel_2 = Instance.new("TextLabel")
-local TextLabel_3 = Instance.new("TextLabel")
+-- Create ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "GhoulicControlGUI"
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-main.Name = "RenderScreen"
-main.Parent = game.CoreGui
-main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-main.IgnoreGuiInset = true
+-- Create the main label
+local mainLabel = Instance.new("TextLabel")
+mainLabel.Size = UDim2.new(0.5, 0, 0.1, 0)
+mainLabel.Position = UDim2.new(0.25, 0, 0.45, 0)
+mainLabel.BackgroundTransparency = 1
+mainLabel.Text = "Ghoulic Control V.1"
+mainLabel.TextColor3 = Color3.new(1, 1, 1)
+mainLabel.TextScaled = true
+mainLabel.Parent = screenGui
 
-Frame.Parent = main
-Frame.Active = true
-Frame.AnchorPoint = Vector2.new(0.5, 0.5)
-Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
-Frame.Size = UDim2.new(1, 0, 1, 0)
+-- Create the credits label
+local creditsLabel = Instance.new("TextLabel")
+creditsLabel.Size = UDim2.new(0.3, 0, 0.05, 0)
+creditsLabel.Position = UDim2.new(0.7, 0, 0.95, 0)
+creditsLabel.BackgroundTransparency = 1
+creditsLabel.Text = "Credits: limitedtear"
+creditsLabel.TextColor3 = Color3.new(1, 1, 1)
+creditsLabel.TextScaled = true
+creditsLabel.Parent = screenGui
 
-TextLabel.Parent = Frame
-TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
-TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.Position = UDim2.new(0.5, 0, 0.42, 0)
-TextLabel.Size = UDim2.new(0, 279, 0, 34)
-TextLabel.Font = Enum.Font.Gotham
-TextLabel.Text = " Limited Control "
-" Welcome " .. game.Players.LocalPlayer.Name .. " Limited CTRL made by: limitedtear "
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 20.000
-TextLabel.TextWrapped = true
+-- Create the username label
+local usernameLabel = Instance.new("TextLabel")
+usernameLabel.Size = UDim2.new(0.3, 0, 0.05, 0)
+usernameLabel.Position = UDim2.new(0.7, 0, 1, 0)
+usernameLabel.BackgroundTransparency = 1
+usernameLabel.Text = "Username: " .. game.Players.LocalPlayer.Name
+usernameLabel.TextColor3 = Color3.new(1, 1, 1)
+usernameLabel.TextScaled = true
+usernameLabel.Parent = screenGui
+
+-- Set the background color
+local backgroundFrame = Instance.new("Frame")
+backgroundFrame.Size = UDim2.new(1, 0, 1, 0)
+backgroundFrame.Position = UDim2.new(0, 0, 0, 0)
+backgroundFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+backgroundFrame.Parent = screenGui
+
+-- Make sure the background frame is at the back
+backgroundFrame.ZIndex = 0
+mainLabel.ZIndex = 1
+creditsLabel.ZIndex = 1
+usernameLabel.ZIndex = 1
 
 	game:GetService("RunService"):Set3dRenderingEnabled(false)
 end
@@ -1468,6 +1484,10 @@ if Player then
 			coroutine.wrap(function()
 				Chatted(Plr)
 			end)()
+	
+		end
+	end)
+end
 	
 		end
 	end)
